@@ -12,17 +12,26 @@
             font-family: Arial, sans-serif;
             text-align: center;
             color: white;
+            overflow: hidden;
         }
         .container {
             padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
         }
         .fun-item {
             background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
+            padding: 15px;
             margin: 10px;
             border-radius: 10px;
             display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 1s ease-out forwards;
         }
+        .fun-item:nth-child(1) { animation-delay: 0.3s; }
+        .fun-item:nth-child(2) { animation-delay: 0.6s; }
+        .fun-item:nth-child(3) { animation-delay: 0.9s; }
+        .fun-item:nth-child(4) { animation-delay: 1.2s; }
         .back {
             display: block;
             margin: 20px auto;
@@ -31,6 +40,25 @@
             color: white;
             border-radius: 10px;
             text-decoration: none;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+        }
+        .back:hover {
+            background: darkred;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -45,4 +73,3 @@
     </div>
 </body>
 </html>
-
