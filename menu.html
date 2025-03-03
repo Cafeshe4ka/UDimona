@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             background: url('revo-can-background.jpg') no-repeat center center/cover;
-            font-family: Arial, sans-serif;
+            font-family: 'Oswald', sans-serif;
             text-align: center;
             color: white;
             height: 100vh;
@@ -24,7 +24,6 @@
             transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
         }
         h1 {
-            font-family: 'Oswald', sans-serif;
             font-size: 5rem;
             color: #FFD700;
             text-transform: uppercase;
@@ -32,9 +31,20 @@
             text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
             margin: 20px;
         }
+        .menu-item {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
         .back {
             display: inline-block;
-            margin: 10px;
+            margin: 20px;
             padding: 15px 30px;
             font-size: 1.5rem;
             background: red;
@@ -52,12 +62,25 @@
 </head>
 <body>
     <h1>Меню</h1>
+    <div class="menu-item">Нагенси - залежить від ціни в магазині</div>
+    <div class="menu-item">Варенички у сметані МОЇ - безцінно</div>
+    <div class="menu-item">Шашлик - тільки на великі св'ята</div>
+    <div class="menu-item">Пиво - НІ</div>
+    <div class="menu-item">РЕВО - Саня візьме</div>
     <a href="index.html" class="back">Назад</a>
-    
-    <script>
+
+    <script defer>
         document.addEventListener("DOMContentLoaded", function() {
             document.body.style.opacity = "1";
             document.body.style.transform = "translateY(0)";
+            
+            let menuItems = document.querySelectorAll(".menu-item");
+            menuItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0)";
+                }, index * 300);
+            });
         });
     </script>
 </body>
