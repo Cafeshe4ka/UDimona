@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кафе у Дмитра</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        
         body {
             margin: 0;
             padding: 0;
@@ -12,67 +14,42 @@
             font-family: Arial, sans-serif;
             text-align: center;
             color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-        .container {
-            padding: 20px;
-        }
-        .menu, .fun {
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 5rem;
+            color: #FFD700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
             margin: 20px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            display: inline-block;
-            border-radius: 10px;
         }
-        .btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
+        .menu-btn, .fun-btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.5rem;
             background: red;
             color: white;
-            padding: 10px 20px;
+            border: none;
             border-radius: 10px;
-            cursor: pointer;
-            animation: bounce 1.5s infinite;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s;
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .popup {
-            position: fixed;
-            bottom: 100px;
-            left: 20px;
-            background: black;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .popup.show {
-            display: block;
-            opacity: 1;
+        .menu-btn:hover, .fun-btn:hover {
+            background: darkred;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Кафе у Дмитра</h1>
-        <div>
-            <a href="menu.html" class="menu">Меню</a>
-            <a href="fun.html" class="fun">Розваги</a>
-        </div>
-    </div>
-    
-    <div class="btn" onclick="togglePopup()">Хто на вахті</div>
-    <div class="popup" id="popup">Влад П*ідор на вахті</div>
-    
-    <script>
-        function togglePopup() {
-            let popup = document.getElementById('popup');
-            popup.classList.toggle('show');
-        }
-    </script>
+    <h1>Кафе у Дмитра</h1>
+    <a href="menu.html" class="menu-btn">Меню</a>
+    <a href="fun.html" class="fun-btn">Розваги</a>
 </body>
 </html>
