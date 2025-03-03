@@ -11,45 +11,48 @@
             margin: 0;
             padding: 0;
             background: url('revo-can-background.jpg') no-repeat center center/cover;
-            font-family: Arial, sans-serif;
+            font-family: 'Oswald', sans-serif;
             text-align: center;
             color: white;
-            overflow: hidden;
-        }
-        .container {
-            padding: 20px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             opacity: 0;
             transform: translateY(-20px);
             transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
         }
         h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 4rem;
+            font-size: 5rem;
             color: #FFD700;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            margin: 20px 0;
+            letter-spacing: 5px;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+            margin: 20px;
         }
         .fun-item {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             padding: 15px;
             margin: 10px;
             border-radius: 10px;
             display: inline-block;
+            font-size: 1.5rem;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
         .back {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 1.5rem;
             background: red;
             color: white;
+            border: none;
             border-radius: 10px;
             text-decoration: none;
-            transition: background 0.3s ease-in-out, transform 0.2s;
+            transition: transform 0.3s, background 0.3s;
         }
         .back:hover {
             background: darkred;
@@ -58,20 +61,17 @@
     </style>
 </head>
 <body>
-    <div class="container" id="container">
-        <h1>Кафе у Дмитра</h1>
-        <div class="fun-item">Настільний футбол</div>
-        <div class="fun-item">Дартс</div>
-        <div class="fun-item">PlayStation</div>
-        <div class="fun-item">Живі виступи</div>
-        <a href="index.html" class="back">Назад</a>
-    </div>
-    
-    <script>
+    <h1>Розваги</h1>
+    <div class="fun-item">Професійний Гейбол</div>
+    <div class="fun-item">Кишеньковий більярд</div>
+    <div class="fun-item">Sony GayStation</div>
+    <div class="fun-item">Живі виступи Кулика</div>
+    <a href="index.html" class="back">Назад</a>
+
+    <script defer>
         document.addEventListener("DOMContentLoaded", function() {
-            let container = document.getElementById("container");
-            container.style.opacity = "1";
-            container.style.transform = "translateY(0)";
+            document.body.style.opacity = "1";
+            document.body.style.transform = "translateY(0)";
             
             let funItems = document.querySelectorAll(".fun-item");
             funItems.forEach((item, index) => {
